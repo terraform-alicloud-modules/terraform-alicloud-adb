@@ -7,6 +7,7 @@ terraform {
   }
 }
 
+
 data "alicloud_zones" "default" {
   available_resource_creation = var.creation
 }
