@@ -1,19 +1,7 @@
-variable "name" {
-  description = "The name of a new instance."
-  type        = string
-  default     = "tf-adb-cluster"
-}
-
 variable "description" {
   description = "The name of a new description."
   type        = string
-  default     = "Test new adb again."
-}
-
-variable "creation" {
-  description = "The specification of the creation."
-  type        = string
-  default     = "ADB"
+  default     = "Test new adb."
 }
 
 variable "category" {
@@ -82,14 +70,14 @@ variable "security_ips" {
   default     = ["10.168.1.12","10.168.1.11"]
 }
 
-variable "vpc_cidr_block" {
-  description = "The specification of the vpc cidr block."
+variable "availability_zone" {
+  description = "The available zone to launch modules."
   type        = string
-  default     = "172.16.0.0/16"
+  default     = ""
 }
 
-variable "vswitch_cidr_block" {
-  description = "The specification of the vswitch cidr block."
+variable "vswitch_id" {
+  description = "VSwitch variables, if vswitch_id is empty, then the net_type = classic."
   type        = string
-  default     = "172.16.0.0/24"
+  default     = ""
 }
