@@ -1,6 +1,6 @@
 resource "alicloud_adb_db_cluster" "this" {
   db_cluster_category = var.category
-  db_cluster_class    = var.class
+  db_node_class       = var.class
   description         = var.description
   db_node_count       = var.node_count
   db_node_storage     = var.node_storage
