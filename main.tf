@@ -8,10 +8,10 @@ resource "alicloud_adb_db_cluster" "this" {
   db_cluster_version  = var.cluster_version
   payment_type        = var.payment_type
   vswitch_id          = var.vswitch_id
+  security_ips        = var.security_ips
   maintain_time       = var.maintain_time
-  tags                = {
+  tags = {
     Created = var.tags_created
     For     = var.tags_for
   }
-  security_ips        = var.security_ips
 }

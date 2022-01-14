@@ -1,9 +1,3 @@
-variable "description" {
-  description = "The name of a new description."
-  type        = string
-  default     = "Test new adb."
-}
-
 variable "category" {
   description = "The specification of the category."
   type        = string
@@ -16,16 +10,22 @@ variable "class" {
   default     = "C8"
 }
 
+variable "description" {
+  description = "The name of a new description."
+  type        = string
+  default     = ""
+}
+
 variable "node_count" {
   description = "The specification of the node count."
-  type        = string
-  default     = "4"
+  type        = number
+  default     = 4
 }
 
 variable "node_storage" {
   description = "The specification of the node storage."
-  type        = string
-  default     = "400"
+  type        = number
+  default     = 400
 }
 
 variable "mode" {
@@ -46,6 +46,18 @@ variable "payment_type" {
   default     = "PayAsYouGo"
 }
 
+variable "vswitch_id" {
+  description = "VSwitch variables, if vswitch_id is empty, then the net_type = classic."
+  type        = string
+  default     = ""
+}
+
+variable "security_ips" {
+  description = "The specification of the security_ips."
+  type        = list(string)
+  default     = ["127.0.0.1"]
+}
+
 variable "maintain_time" {
   description = "The specification of the maintain time."
   type        = string
@@ -55,29 +67,17 @@ variable "maintain_time" {
 variable "tags_created" {
   description = "The specification of the tags created."
   type        = string
-  default     = "TF-update"
+  default     = ""
 }
 
 variable "tags_for" {
   description = "The specification of the tags for."
   type        = string
-  default     = "acceptance-test-update"
-}
-
-variable "security_ips" {
-  description = "The specification of the security_ips."
-  type        = list(string)
-  default     = ["10.168.1.12","10.168.1.11"]
+  default     = ""
 }
 
 variable "availability_zone" {
   description = "The available zone to launch modules."
-  type        = string
-  default     = ""
-}
-
-variable "vswitch_id" {
-  description = "VSwitch variables, if vswitch_id is empty, then the net_type = classic."
   type        = string
   default     = ""
 }
